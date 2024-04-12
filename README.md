@@ -3,7 +3,7 @@
 - 🌱 I’m currently learning ML,AI,Statistics,...
 - 📫 How to reach me :utpalrajkemprai2001@gmail.com
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?U1Kemp)](https://github.com/anuraghazra/github-readme-stats)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=U1Kemp)](https://github.com/anuraghazra/github-readme-stats)
 
 <!---
 U1Kemp/U1Kemp is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
