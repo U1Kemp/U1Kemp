@@ -12,14 +12,14 @@
 ## 🛠️ Technologies & Tools
 
 - **Languages:** Python, R, Julia, SQL
-- **Libraries/Frameworks:** NumPy, Pandas, Scikit-Learn, PyTorch, TensorFlow, Keras, SpaCy
-- **Data Visualization:** Matplotlib, Seaborn, Plotly, Power BI
+- **Libraries/Frameworks:** NumPy, Pandas, Scikit-Learn, PyTorch, TensorFlow, Keras, SpaCy, NLTK, OpenCV
+- **Data Visualization:** Matplotlib, Seaborn, Plotly, Power BI, ggplot2
 - **Databases:** MySQL
 ---
 
 ## 🎓 Education
 
-- **Bachelor of Mathematics (B.Math)**  
+- **Bachelor of Mathematics (Hons.)**  
   Indian Statistical Institute, Bangalore
 
 - **M.Sc in Data Science**  
@@ -31,13 +31,13 @@
 - Time Series Analysis
 - NLP
 - Theoretical ML
-
 ---
 
 ## 📫 How to Reach Me
 
 - **Email:** [utpalrajkemprai2001@gmail.com](mailto:utpalrajkemprai2001@gmail.com)
 - **LinkedIn:** [linkedin.com/in/utpalraj-kemprai](https://www.linkedin.com/in/utpalraj-kemprai-89245a251/)
+- **[My Home Page](https://u1kemp.github.io/index.html)**
 
 ---
 
