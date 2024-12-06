@@ -28,7 +28,7 @@
 
 ## 🌱 I'm Currently Learning
 - Deep Learning Techniques
-- Time Series Analysis
+- Reinforcement Learning
 - NLP
 - Theoretical ML
 ---
