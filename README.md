@@ -19,10 +19,10 @@
 
 ## 🎓 Education
 
-- **Bachelor of Mathematics (Hons.)**  
+- **Bachelor of Mathematics (Hons.) (2020-2023)**  
   Indian Statistical Institute, Bangalore
 
-- **M.Sc in Data Science**  
+- **M.Sc in Data Science (2023 - ongoing)**  
   Chennai Mathematical Institute
 ---
 
