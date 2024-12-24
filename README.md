@@ -29,8 +29,7 @@
 ## 🌱 I'm Currently Learning
 - Deep Learning Techniques
 - Reinforcement Learning
-- NLP
-- Theoretical ML
+- Flow Matching
 ---
 
 ## 📫 How to Reach Me
