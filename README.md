@@ -12,7 +12,7 @@
 ## 🛠️ Technologies & Tools
 
 - **Languages:** Python, R, Julia, SQL
-- **Libraries/Frameworks:** NumPy, Pandas, Scikit-Learn, PyTorch, TensorFlow, Keras, SpaCy, NLTK, OpenCV
+- **Libraries/Frameworks:** NumPy, Pandas, Scikit-Learn, PyTorch, TensorFlow, Keras, SpaCy, NLTK, OpenCV, Streamlit, gymnasium
 - **Data Visualization:** Matplotlib, Seaborn, Plotly, Power BI, ggplot2
 - **Databases:** MySQL
 ---
@@ -27,9 +27,9 @@
 ---
 
 ## 🌱 I'm Currently Learning
-- Deep Learning Techniques
-- Reinforcement Learning
-- Flow Matching
+- Applied Machine Learning
+- Mathematical Finance
+- Econometrics
 ---
 
 ## 📫 How to Reach Me
