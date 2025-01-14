@@ -28,8 +28,9 @@
 
 ## 🌱 I'm Currently Learning
 - Applied Machine Learning
-- Mathematical Finance
+- Optimization
 - Econometrics
+- Mathematical Finance
 ---
 
 ## 📫 How to Reach Me
