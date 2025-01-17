@@ -30,7 +30,6 @@
 - Applied Machine Learning
 - Optimization
 - Econometrics
-- Mathematical Finance
 ---
 
 ## 📫 How to Reach Me
