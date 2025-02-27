@@ -5,8 +5,8 @@
 ---
 
 ## 📊 My Statistics
-[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=U1Kemp&layout=compact&theme=vision-friendly-dark&langs_count=8)](https://github.com/anuraghazra/github-readme-stats)
-[![GitHub stats](https://github-readme-stats.vercel.app/api?username=U1Kemp&layout=compact&theme=vision-friendly-dark)](https://github.com/anuraghazra/github-readme-stats)
+[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=U1Kemp&layout=compact&theme=vision-friendly-dark&langs_count=8&title_color=ff5733&text_color=c9d1d9&bg_color=0d1117&border_color=4c8eda)](https://github.com/anuraghazra/github-readme-stats)
+[![GitHub stats](https://github-readme-stats.vercel.app/api?username=U1Kemp&layout=compact&theme=vision-friendly-dark&langs_count=8&title_color=ff5733&text_color=c9d1d9&bg_color=0d1117&border_color=4c8eda)](https://github.com/anuraghazra/github-readme-stats)
 
 ---
 ## 🛠️ Technologies & Tools
