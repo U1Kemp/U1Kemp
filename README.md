@@ -27,9 +27,8 @@
 ---
 
 ## 🌱 I'm Currently Learning
-- Applied Machine Learning
-- Optimization
-- Econometrics
+- Survival Analysis using R
+
 ---
 
 ## 📫 How to Reach Me
