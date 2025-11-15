@@ -16,7 +16,7 @@ Welcome to my GitHub profile! I’m someone still figuring things out — drawn 
 ## 🛠️ Technologies & Tools
 
 - **Languages:** Python, R, Julia, SQL  
-- **Libraries/Frameworks:** NumPy, Pandas, Scikit-Learn, PyTorch, TensorFlow, Keras, SpaCy, NLTK, OpenCV, Streamlit, gymnasium  
+- **Libraries/Frameworks:** NumPy, Pandas, Scikit-Learn, PyTorch, TensorFlow, Keras, SpaCy, NLTK, OpenCV, Streamlit, Shiny, Streamlit, Flask, gymnasium  
 - **Visualization:** Matplotlib, Seaborn, Plotly, ggplot2, Power BI (when Excel just won't cut it)  
 - **Databases:** MySQL  
 
@@ -35,15 +35,14 @@ Welcome to my GitHub profile! I’m someone still figuring things out — drawn 
 
 - Survival Analysis with R (because why let lifetimes be boring?)  
 - Causal Inference (a.k.a., "Did X really cause Y or are we just imagining things?")  
-- Bayesian Statistics (Trust the prior, even when life doesn't update in your favor)
 - Japanese (slowly — anime subtitles are still doing most of the heavy lifting)
 
 ---
 
 ## 💬 Anime, Manga & Music Corner
 
-- Favorites: *Kara no Kyōkai*, *Hayate no Gotoku!*, *Millennium Actress*, *Samurai Flamenco*, *Dungeon Maeshi*  
-- Waifu Tier: Katsura Hinagiku (fight me)  
+- Favorites: *Kara no Kyōkai*, *Hayate no Gotoku!*, *Millennium Actress*, *Samurai Flamenco*, *Dungeon Maeshi*, *Chainsaw Man*  
+- Waifu Tier: Ruka Suirenji & Katsura Hinagiku (fight me)  
 - Listening to: Chilli Beans, Tomoo, Cody Lee, and yes, the *本日、満開ワタシ色！* ED on repeat  
 - Mood: Somewhere between melancholic anime outro and shonen power-up scene
 
