@@ -22,7 +22,7 @@ jobs:
 
       - name: Install R packages
         run: |
-          install.packages(c("jsonlite", "dplyr", "ggplot2"), repos = "https://cloud.r-project.org")
+          install.packages(c("jsonlite", "dplyr", "ggplot2", "httr"), repos = "https://cloud.r-project.org")
         shell: Rscript {0}
 
       - name: Generate language plot
