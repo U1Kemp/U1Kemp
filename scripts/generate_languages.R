@@ -49,7 +49,8 @@ lang_summary <- lang_df %>%
   group_by(language) %>%
   summarise(bytes = sum(bytes), .groups = "drop") %>%
   mutate(percent = bytes / sum(bytes) * 100) %>%
-  arrange(desc(percent))
+  arrange(desc(percent)) %>%
+  filter(percent >= 0.01)
 
 # ---------- PLOT ----------
 p <- ggplot(lang_summary, aes(
@@ -58,14 +59,13 @@ p <- ggplot(lang_summary, aes(
   fill = language
 )) +
   geom_col(show.legend = FALSE) +
-  geom_text(aes(label = paste0(round(percent, 3), "%")),
+  geom_text(aes(label = paste0(round(percent, 2), "%")),
             hjust = -0.1,
             size = 3.2,
             color = "white") +
   scale_y_continuous(limits = c(0, 85), expand = expansion(mult = c(0, 0.05))) +
   coord_flip() +
   labs(
-    title = "",
     x = NULL,
     y = "Percentage (%)"
   ) +
@@ -74,8 +74,7 @@ p <- ggplot(lang_summary, aes(
     plot.background = element_rect(fill = "#0d1117", color = NA),
     panel.background = element_rect(fill = "#0d1117", color = NA),
     text = element_text(color = "#c9d1d9"),
-    axis.text = element_text(color = "#c9d1d9"),
-    plot.title = element_text(color = "#ff5733", face = "bold")
+    axis.text = element_text(color = "#c9d1d9")
   )
 
 dir.create("images", showWarnings = FALSE)
