@@ -1,6 +1,7 @@
 library(jsonlite)
 library(dplyr)
 library(ggplot2)
+library(httr)
 
 # ---------- CONFIG ----------
 username <- "U1Kemp"
@@ -13,12 +14,26 @@ repos_url <- paste0(
   "/repos?per_page=100"
 )
 
-repos <- fromJSON(repos_url)
+# Read GitHub token from environment (set in Actions as GITHUB_TOKEN)
+token <- Sys.getenv("GITHUB_TOKEN", "")
+
+# Helper to fetch JSON from GitHub with optional auth
+fetch_json <- function(url) {
+  if (is.null(url) || is.na(url) || url == "") return(NULL)
+  headers <- c(`User-Agent` = "R generate_languages script")
+  if (nzchar(token)) headers <- c(headers, Authorization = paste("token", token))
+  resp <- GET(url, add_headers(.headers = headers))
+  stop_for_status(resp)
+  txt <- content(resp, as = "text", encoding = "UTF-8")
+  fromJSON(txt)
+}
+
+repos <- fetch_json(repos_url)
 
 # ---------- FETCH LANGUAGES ----------
 lang_list <- lapply(repos$languages_url, function(url) {
   if (is.na(url)) return(NULL)
-  fromJSON(url)
+  fetch_json(url)
 })
 
 lang_df <- bind_rows(lapply(lang_list, function(x) {
