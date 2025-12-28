@@ -7,7 +7,7 @@ Welcome to my GitHub profile! I’m someone still figuring things out — drawn 
 
 ---
 
-## 📊 GitHub Stats
+## 📊 Most Used Languages
 
 ![Top Languages](images/languages.png)
 ---
