@@ -3,6 +3,48 @@ library(dplyr)
 library(ggplot2)
 library(httr)
 
+# ---------- EXTENSION TO LANGUAGE MAP AND FUNCTION ----------
+ext_to_lang <- list(
+  "py" = "Python",
+  "js" = "JavaScript",
+  "ts" = "TypeScript",
+  "java" = "Java",
+  "cpp" = "C++",
+  "c" = "C",
+  "cs" = "C#",
+  "rb" = "Ruby",
+  "go" = "Go",
+  "rs" = "Rust",
+  "php" = "PHP",
+  "swift" = "Swift",
+  "kt" = "Kotlin",
+  "scala" = "Scala",
+  "r" = "R",
+  "m" = "MATLAB",
+  "jl" = "Julia",
+  "sh" = "Shell",
+  "pl" = "Perl",
+  "dart" = "Dart",
+  "lua" = "Lua",
+  "hs" = "Haskell",
+  "html" = "HTML",
+  "css" = "CSS",
+  "json" = "JSON",
+  "xml" = "XML",
+  "ipynb" = "Jupyter Notebook",
+  "tex" = "TeX"
+)
+
+get_language <- function(filename) {
+  ext <- tolower(tools::file_ext(filename))
+  if (ext %in% names(ext_to_lang)) {
+    ext_to_lang[[ext]]
+  } else {
+    NA_character_
+  }
+}
+
+
 # ---------- CONFIG ----------
 username <- "U1Kemp"
 output_file <- "images/languages.png"
@@ -30,6 +72,32 @@ fetch_json <- function(url) {
 
 repos <- fetch_json(repos_url)
 
+# Helper to fetch file tree for a repo (recursive)
+fetch_tree <- function(owner, repo) {
+  url <- paste0("https://api.github.com/repos/", owner, "/", repo, "/git/trees/HEAD?recursive=1")
+  fetch_json(url)
+}
+
+# Get all file paths for all repos
+file_langs <- list()
+for (i in seq_len(nrow(repos))) {
+  repo_name <- repos$name[i]
+  tree <- fetch_tree(username, repo_name)
+  if (!is.null(tree$tree)) {
+    files <- tree$tree[tree$tree$type == "blob", ]
+    if (nrow(files) > 0) {
+      langs <- sapply(files$path, get_language)
+      file_langs[[repo_name]] <- langs[!is.na(langs)]
+    }
+  }
+}
+
+# Flatten and count
+all_langs <- unlist(file_langs)
+lang_count <- as.data.frame(table(all_langs), stringsAsFactors = FALSE)
+colnames(lang_count) <- c("language", "files")
+lang_count <- lang_count %>% arrange(desc(files))
+lang_count <- lang_count %>% filter(!is.na(language))
 # ---------- FETCH LANGUAGES ----------
 lang_list <- lapply(repos$languages_url, function(url) {
   if (is.na(url)) return(NULL)
@@ -44,13 +112,12 @@ lang_df <- bind_rows(lapply(lang_list, function(x) {
   )
 }))
 
+
 # ---------- AGGREGATE ----------
-lang_summary <- lang_df %>%
-  group_by(language) %>%
-  summarise(bytes = sum(bytes), .groups = "drop") %>%
-  mutate(percent = bytes / sum(bytes) * 100) %>%
-  arrange(desc(percent)) %>%
+lang_summary <- lang_count %>%
+  mutate(percent = files / sum(files) * 100) %>%
   filter(percent >= 0.01)
+
 
 # ---------- PLOT ----------
 p <- ggplot(lang_summary, aes(
@@ -59,15 +126,15 @@ p <- ggplot(lang_summary, aes(
   fill = language
 )) +
   geom_col(show.legend = FALSE) +
-  geom_text(aes(label = paste0(round(percent, 2), "%")),
+  geom_text(aes(label = paste0(round(percent,2),"%")),
             hjust = -0.1,
             size = 3.2,
             color = "white") +
-  scale_y_continuous(limits = c(0, 85), expand = expansion(mult = c(0, 0.05))) +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.5))) +
   coord_flip() +
   labs(
     x = NULL,
-    y = "Percentage (%)"
+    y = "Files (%)"
   ) +
   theme_dark(base_size = 14) +
   theme(
@@ -82,7 +149,7 @@ dir.create("images", showWarnings = FALSE)
 ggsave(
   filename = output_file,
   plot = p,
-  width = 6,
-  height = 4,
+  width = 5,
+  height = 3.5,
   dpi = 150
 )
